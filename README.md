@@ -3,7 +3,7 @@
 A full-stack music discovery and streaming web app built with Node.js, Express, SQLite, and vanilla JavaScript.
 
 **GitHub:** https://github.com/tanhoang0803/simple-music-app
-**Live URL:** https://simple-music-app.onrender.com *(deploy via Render — see below)*
+**Live URL:** https://simple-music-app.onrender.com
 
 ---
 
