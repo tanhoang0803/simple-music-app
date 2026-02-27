@@ -1,0 +1,126 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>MusicApp — The Real Sound</title>
+  <link rel="stylesheet" href="/css/app.css" />
+</head>
+<body>
+
+  <!-- ═══════════════════════════════ HEADER ═══════════════════════════════ -->
+  <header class="site-header">
+    <div class="header-inner">
+      <a class="logo" href="/">
+        <img src="/images/logo.png" alt="MusicApp Logo" />
+        <span>MusicApp</span>
+      </a>
+
+      <div class="search-wrap">
+        <input
+          id="search-input"
+          type="search"
+          placeholder="Search songs or artists…"
+          autocomplete="off"
+        />
+      </div>
+
+      <nav class="header-nav">
+        <a href="/">Home</a>
+        <a href="#catalog">Catalog</a>
+        <a href="#contact">Contact</a>
+      </nav>
+    </div>
+  </header>
+
+  <!-- ═══════════════════════════════ HERO ════════════════════════════════ -->
+  <section class="hero">
+    <div class="hero-content">
+      <article class="hero-left">
+        <p class="hero-label">Featured Track</p>
+        <h1>THE<br>REAL<br>SOUND</h1>
+        <p id="hero-song-meta" class="hero-meta">HEARTBREAK ANNIVERSARY &mdash; Giveon</p>
+      </article>
+
+      <figure class="hero-right">
+        <figcaption>Click Here To Listen</figcaption>
+        <img src="/images/play.png" id="hero-icon" alt="Play / Pause" />
+      </figure>
+    </div>
+
+    <a href="#catalog" class="hero-scroll">
+      <span>Discover All Songs</span>
+      <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+        <polyline points="6 9 12 15 18 9"/>
+      </svg>
+    </a>
+  </section>
+
+  <!-- ═══════════════════════════════ MAIN ════════════════════════════════ -->
+  <main class="main-content">
+
+    <!-- Trending -->
+    <section class="section trending-section">
+      <h2 class="section-title">Trending Now</h2>
+      <div id="trending-list" class="trending-list">
+        <!-- populated by trending.js -->
+      </div>
+    </section>
+
+    <!-- Catalog -->
+    <section id="catalog" class="section catalog-section">
+      <div class="catalog-header">
+        <h2 class="section-title">All Songs</h2>
+        <div id="genre-tabs" class="genre-tabs">
+          <!-- populated by catalog.js -->
+        </div>
+      </div>
+      <div id="song-grid" class="song-grid">
+        <!-- populated by catalog.js -->
+      </div>
+    </section>
+
+  </main>
+
+  <!-- ═══════════════════════════════ FOOTER ═══════════════════════════════ -->
+  <footer id="contact" class="site-footer">
+    <div class="footer-inner">
+      <span class="footer-logo">MusicApp</span>
+      <p>Created by TanQHoang &nbsp;&bull;&nbsp; &copy; 2024 All rights reserved.</p>
+    </div>
+  </footer>
+
+  <!-- ════════════════════════ PERSISTENT PLAYER ═══════════════════════════ -->
+  <div id="player" class="player player--idle">
+    <img id="player-cover" class="player-cover" src="/images/default-cover.png" alt="Cover" />
+
+    <div class="player-info">
+      <span id="player-title"  class="player-title">—</span>
+      <span id="player-artist" class="player-artist">—</span>
+    </div>
+
+    <div class="player-controls">
+      <button id="btn-prev"       class="ctrl-btn"           aria-label="Previous">&#9664;&#9664;</button>
+      <button id="btn-play-pause" class="ctrl-btn ctrl-btn--main" aria-label="Play">&#9654;</button>
+      <button id="btn-next"       class="ctrl-btn"           aria-label="Next">&#9654;&#9654;</button>
+    </div>
+
+    <div class="player-timeline">
+      <span id="time-current" class="time-label">0:00</span>
+      <input id="seek-bar" type="range" min="0" max="100" value="0" step="0.1" class="seek-bar" />
+      <span id="time-total"    class="time-label">0:00</span>
+    </div>
+
+    <div class="player-volume">
+      <span class="vol-icon">&#128266;</span>
+      <input id="volume-slider" type="range" min="0" max="1" value="0.8" step="0.01" class="volume-slider" />
+    </div>
+  </div>
+
+  <!-- Hidden audio element used by the player -->
+  <audio id="audio-engine" preload="auto"></audio>
+
+  <script type="module" src="/js/app.js"></script>
+
+</body>
+</html>
